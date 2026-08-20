@@ -39,7 +39,7 @@ export const servicesData: ServiceItem[] = [
       'Google Analytics 4 & Conversion Tracking'
     ],
     techStack: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Three.js'],
-    timeline: '2 - 4 Weeks'
+    timeline: '1 - 3 Weeks (Depending on complexity)'
   },
   {
     number: '02',
@@ -62,7 +62,7 @@ export const servicesData: ServiceItem[] = [
       'Automated Testing & Security Audits'
     ],
     techStack: ['React', 'Node.js', 'PostgreSQL', 'Express', 'Docker', 'Redis'],
-    timeline: '4 - 8 Weeks'
+    timeline: '2 - 7 Weeks (Depending on complexity)'
   },
   {
     number: '03',
@@ -85,7 +85,7 @@ export const servicesData: ServiceItem[] = [
       'Developer Handoff Specifications'
     ],
     techStack: ['Figma', 'Protopie', 'Design Tokens', 'Storybook', 'Framer'],
-    timeline: '2 - 3 Weeks'
+    timeline: '1 - 2 Weeks (Depending on complexity)'
   },
   {
     number: '04',
@@ -108,7 +108,7 @@ export const servicesData: ServiceItem[] = [
       'Mobile-First Cart & Checkout UX'
     ],
     techStack: ['Shopify Liquid', 'Next.js Commerce', 'Stripe', 'GraphQL', 'Tailwind'],
-    timeline: '3 - 6 Weeks'
+    timeline: '2 - 5 Weeks (Depending on complexity)'
   },
   {
     number: '05',
@@ -131,7 +131,7 @@ export const servicesData: ServiceItem[] = [
       '24/7 AI Customer Support Assistants'
     ],
     techStack: ['Python', 'LangChain', 'Pinecone', 'OpenAI', 'n8n', 'FastAPI'],
-    timeline: '3 - 5 Weeks'
+    timeline: '2 - 6 Weeks (Depending on complexity)'
   },
   {
     number: '06',
@@ -154,7 +154,7 @@ export const servicesData: ServiceItem[] = [
       '24/7 Real-Time Sentry Error Monitoring'
     ],
     techStack: ['AWS', 'Docker', 'Kubernetes', 'Vercel', 'GitHub Actions', 'Sentry'],
-    timeline: '4 - 10 Weeks'
+    timeline: '3 - 7 Weeks (Depending on complexity)'
   },
 ];
 
