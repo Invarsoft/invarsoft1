@@ -5,7 +5,6 @@ import { Navbar } from '@/components/Navbar';
 import { HeroCinematic } from '@/components/HeroCinematic';
 import { TrustStrip } from '@/components/TrustStrip';
 import { WhatWeBuild } from '@/components/WhatWeBuild';
-import { FeaturedWork } from '@/components/FeaturedWork';
 import { FinalCTASection } from '@/components/FinalCTASection';
 import { Footer } from '@/components/Footer';
 
@@ -28,13 +27,10 @@ export default function Home() {
       {/* 3. High-Level Services Overview */}
       <WhatWeBuild />
 
-      {/* 4. Featured Portfolio Highlights */}
-      <FeaturedWork />
-
-      {/* 5. Call To Action */}
+      {/* 4. Call To Action */}
       <FinalCTASection />
 
-      {/* 6. Footer */}
+      {/* 5. Footer */}
       <Footer />
 
     </main>
