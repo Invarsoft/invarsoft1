@@ -26,7 +26,7 @@ export const projectsData: ProjectItem[] = [
     subtitle: 'High-End Luxury Interior Design Studio Platform',
     description: "A bespoke, editorial digital experience engineered for C Bhanu's Interiors (cbhanusinteriors.in). Featuring smooth visual storytelling, high-resolution interior portfolio galleries, instant client consultation workflows, and mobile performance optimization.",
     tags: ['Web Design', 'Development', 'Editorial Layout', 'Next.js'],
-    image: '/media_1787164393235.jpg',
+    image: '/cbhanu-cover.webp',
     liveUrl: 'https://cbhanusinteriors.in',
     featured: true,
     deliverables: [
@@ -51,7 +51,7 @@ export const projectsData: ProjectItem[] = [
     subtitle: 'Next-Generation Smart Hardware & Technology Platform',
     description: 'A cutting-edge technology and smart solutions platform built for InvarThings (invarthings.com). Designed for seamless product exploration, high-throughput e-commerce transactions, automated inventory management, and intuitive user experiences.',
     tags: ['E-Commerce', 'Smart Tech', 'Next.js', 'Stripe API'],
-    image: '/media_1787164387436.jpg',
+    image: '/invarthings-cover.png',
     liveUrl: 'https://invarthings.com',
     deliverables: [
       'High-Speed E-Commerce Architecture',

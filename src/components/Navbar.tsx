@@ -29,7 +29,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onLogoClick }) => {
     { label: 'Home', href: '/' },
     { label: 'Tools & Services', href: '/services' },
     { label: 'Solutions', href: '/solutions' },
-    { label: 'Work', href: '/projects' },
+    { label: 'Portfolio', href: '/projects' },
     { label: 'Process', href: '/process' },
     { label: 'About', href: '/about' },
   ];
