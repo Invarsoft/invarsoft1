@@ -150,6 +150,22 @@ export const servicesData: ServiceItem[] = [
     description: 'Vercel/AWS cloud infrastructure deployment, Docker containerization, Kubernetes orchestration, CI/CD automated pipelines, and Sentry monitoring.',
     icon: Cloud,
     deliverables: ['Vercel, AWS & Google Cloud Infrastructure', 'Docker & Docker Compose Containerization', 'GitHub Actions & GitLab CI/CD Automated Pipelines', 'SSL, DNS & Cloudflare Edge CDN Delivery', 'Sentry Real-Time Error Tracking & Monitoring']
+  },
+  {
+    id: 'mobile-app-development',
+    title: 'Mobile App Development (iOS & Android)',
+    category: 'Web Development Services',
+    description: 'Native iOS & Android mobile applications built with React Native and Flutter, featuring offline data synchronization, push notifications, and App Store / Google Play publishing.',
+    icon: Smartphone,
+    deliverables: ['Cross-Platform React Native & Flutter Apps', 'Apple App Store & Google Play Publishing', 'Firebase & Push Notification Engine', 'Offline Data Caching & Local Storage Sync', 'Biometric Auth & Secure Keychain Storage']
+  },
+  {
+    id: 'whatsapp-bot-automation',
+    title: 'WhatsApp Bot & Messaging Automation',
+    category: 'Web Development Services',
+    description: 'Automated WhatsApp messaging bots, Meta Cloud API integration, AI customer service triggers, broadcast campaigns, and automated lead capture.',
+    icon: MessageSquare,
+    deliverables: ['Official WhatsApp Business Cloud API Integration', '24/7 AI-Powered Conversational Chatbot', 'Automated Order & Appointment Confirmations', 'HubSpot & Salesforce CRM Lead Sync', 'Broadcast Marketing & Drip Campaign Engine']
   }
 ];
 
