@@ -159,14 +159,14 @@ export const ProcessSection: React.FC = () => {
           </motion.p>
         </div>
 
-        {/* INTERACTIVE STAGE SELECTOR TABS (TOUCH & SCROLL READY) */}
-        <div className="flex justify-center mb-16 overflow-x-auto pb-4 no-scrollbar">
-          <div className="inline-flex items-center gap-2 bg-[#050A0F] p-2 rounded-2xl border border-white/10 backdrop-blur-xl">
+        {/* INTERACTIVE STAGE SELECTOR TABS (TOUCH & SCROLL READY - STEP 01 ALWAYS VISIBLE) */}
+        <div className="flex justify-start xl:justify-center mb-16 max-w-full overflow-x-auto pb-4 no-scrollbar px-2">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-[#050A0F] p-2 rounded-2xl border border-white/10 backdrop-blur-xl flex-nowrap">
             {processSteps.map((step, idx) => (
               <button
                 key={step.number}
                 onClick={() => setActiveStep(idx)}
-                className={`flex items-center gap-2.5 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 whitespace-nowrap cursor-pointer ${
+                className={`flex items-center gap-2 px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 whitespace-nowrap cursor-pointer ${
                   activeStep === idx
                     ? 'bg-cyan-500 text-black shadow-[0_0_20px_rgba(0,240,255,0.4)]'
                     : 'text-slate-400 hover:text-white hover:bg-white/5'
