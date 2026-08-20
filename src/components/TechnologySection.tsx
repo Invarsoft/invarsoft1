@@ -439,10 +439,10 @@ export const TechnologySection: React.FC = () => {
 
         {/* HIGH-LEVEL DIFFERENTIATION TOGGLE (SERVICES vs TOOLS) */}
         <div className="flex justify-center mb-12">
-          <div className="p-1.5 rounded-2xl bg-[#08131C] border border-white/10 flex items-center gap-2 backdrop-blur-md">
+          <div className="p-1.5 rounded-2xl bg-[#08131C] border border-white/10 flex flex-col sm:flex-row items-stretch sm:items-center gap-2 backdrop-blur-md w-full max-w-md sm:max-w-none sm:w-auto">
             <button
               onClick={() => setViewMode('services')}
-              className={`flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-bold transition-all duration-300 cursor-pointer ${
+              className={`flex items-center justify-center gap-2 px-5 sm:px-6 py-3 rounded-xl text-xs font-bold transition-all duration-300 cursor-pointer ${
                 viewMode === 'services'
                   ? 'bg-cyan-400 text-black shadow-[0_0_25px_rgba(0,240,255,0.4)]'
                   : 'text-slate-300 hover:text-white hover:bg-white/5'
@@ -454,7 +454,7 @@ export const TechnologySection: React.FC = () => {
 
             <button
               onClick={() => setViewMode('tools')}
-              className={`flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-bold transition-all duration-300 cursor-pointer ${
+              className={`flex items-center justify-center gap-2 px-5 sm:px-6 py-3 rounded-xl text-xs font-bold transition-all duration-300 cursor-pointer ${
                 viewMode === 'tools'
                   ? 'bg-cyan-400 text-black shadow-[0_0_25px_rgba(0,240,255,0.4)]'
                   : 'text-slate-300 hover:text-white hover:bg-white/5'

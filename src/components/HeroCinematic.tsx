@@ -51,9 +51,9 @@ export const HeroCinematic: React.FC<HeroProps> = ({
       ref={containerRef}
       id="home"
       onMouseMove={handleMouseMove}
-      className="relative w-full h-screen min-h-[600px] max-h-[1080px] overflow-hidden bg-[#050A0F] text-white flex items-center justify-center selection:bg-cyan-500 selection:text-black"
+      className="relative w-full h-[100dvh] min-h-[550px] max-h-[1080px] overflow-hidden bg-[#050A0F] text-white flex items-center justify-center selection:bg-cyan-500 selection:text-black"
     >
-      {/* DIRECT MP4 BACKGROUND VIDEO (NO EXTRA FRAME IMAGES REQUIRED) */}
+      {/* DIRECT MP4 BACKGROUND VIDEO (RESPONSIVE SCALING FOR MOBILE, TABLET & DESKTOP) */}
       <div
         className="absolute inset-0 z-0 overflow-hidden pointer-events-none transition-transform duration-75 ease-out"
         style={{
@@ -66,7 +66,7 @@ export const HeroCinematic: React.FC<HeroProps> = ({
           muted
           loop
           playsInline
-          className="w-full h-full object-cover brightness-105 contrast-105 saturate-105 scale-[1.32]"
+          className="w-full h-full object-cover object-center brightness-105 contrast-105 saturate-105 scale-[1.25] sm:scale-[1.2] lg:scale-[1.32]"
           style={{
             imageRendering: 'crisp-edges',
             WebkitBackfaceVisibility: 'hidden',
@@ -79,15 +79,15 @@ export const HeroCinematic: React.FC<HeroProps> = ({
         {/* ULTRA-LIGHT TRANSPARENT OVERLAY & WATERMARK ELIMINATOR MASK */}
         <div className="absolute inset-0 bg-[#050A0F]/15" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#050A0F] via-transparent to-[#050A0F]/20" />
-        <div className="absolute bottom-0 right-0 w-96 h-48 bg-gradient-to-l from-[#050A0F] via-[#050A0F]/95 to-transparent pointer-events-none z-10" />
-        <div className="absolute bottom-0 right-0 w-64 h-32 bg-[#050A0F] pointer-events-none z-10 blur-xl" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-40 bg-gradient-to-b from-[#050A0F] to-transparent pointer-events-none z-10" />
+        <div className="absolute bottom-0 right-0 w-72 sm:w-96 h-36 sm:h-48 bg-gradient-to-l from-[#050A0F] via-[#050A0F]/95 to-transparent pointer-events-none z-10" />
+        <div className="absolute bottom-0 right-0 w-48 sm:w-64 h-24 sm:h-32 bg-[#050A0F] pointer-events-none z-10 blur-xl" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-32 sm:h-40 bg-gradient-to-b from-[#050A0F] to-transparent pointer-events-none z-10" />
       </div>
 
       {/* CENTER-ALIGNED, MINIMAL, UNIFORM & NON-DOMINATING HERO TEXT OVERLAY */}
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-12 text-center flex flex-col items-center justify-center">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-16 sm:pt-12 text-center flex flex-col items-center justify-center">
         <div
-          className="max-w-2xl space-y-4 bg-transparent border-0 p-0 shadow-none flex flex-col items-center text-center transition-transform duration-100 ease-out"
+          className="max-w-2xl space-y-4 sm:space-y-5 bg-transparent border-0 p-0 shadow-none flex flex-col items-center text-center transition-transform duration-100 ease-out"
           style={{
             transform: `translate3d(${mousePos.x * 0.2}px, ${mousePos.y * 0.2}px, 0)`,
           }}
@@ -97,7 +97,7 @@ export const HeroCinematic: React.FC<HeroProps> = ({
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/40 border border-white/20 text-slate-200 backdrop-blur-xs text-[10px] font-mono tracking-widest uppercase"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/40 border border-white/20 text-slate-200 backdrop-blur-xs text-[9px] sm:text-[10px] font-mono tracking-widest uppercase"
           >
             <span>PREMIUM DIGITAL SOLUTIONS</span>
           </motion.div>
@@ -107,7 +107,7 @@ export const HeroCinematic: React.FC<HeroProps> = ({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-2xl sm:text-3xl lg:text-4xl font-medium text-white/95 tracking-tight leading-snug"
+            className="text-xl sm:text-3xl md:text-4xl font-medium text-white/95 tracking-tight leading-snug sm:leading-snug"
           >
             We Build Digital Experiences That Move Businesses Forward.
           </motion.h1>
@@ -117,7 +117,7 @@ export const HeroCinematic: React.FC<HeroProps> = ({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-xs sm:text-sm text-slate-300/80 font-normal leading-relaxed max-w-md mx-auto"
+            className="text-xs sm:text-sm text-slate-300/80 font-normal leading-relaxed max-w-sm sm:max-w-md mx-auto"
           >
             InvarSoft creates premium websites, software products, intelligent solutions and digital experiences designed for modern businesses.
           </motion.p>
@@ -127,11 +127,11 @@ export const HeroCinematic: React.FC<HeroProps> = ({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-row items-center justify-center gap-3 pt-2"
+            className="flex flex-row items-center justify-center gap-2.5 sm:gap-3.5 pt-1 sm:pt-2 w-full sm:w-auto"
           >
             <button
               onClick={onStartProjectClick || (() => scrollToSection('contact'))}
-              className="group relative inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-cyan-400 text-black font-semibold text-xs tracking-wide transition-all duration-300 hover:bg-cyan-300 active:scale-98 cursor-pointer"
+              className="group relative inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-lg bg-cyan-400 text-black font-semibold text-xs tracking-wide transition-all duration-300 hover:bg-cyan-300 active:scale-98 cursor-pointer"
             >
               <span>Start a Project</span>
               <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform" />
@@ -139,7 +139,7 @@ export const HeroCinematic: React.FC<HeroProps> = ({
 
             <button
               onClick={onExploreWorkClick || (() => scrollToSection('work'))}
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-black/40 hover:bg-black/60 text-slate-200 font-medium text-xs border border-white/20 backdrop-blur-md transition-all duration-300 hover:border-white/40 cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-lg bg-black/40 hover:bg-black/60 text-slate-200 font-medium text-xs border border-white/20 backdrop-blur-md transition-all duration-300 hover:border-white/40 cursor-pointer"
             >
               <span>Explore Our Work</span>
             </button>
@@ -150,7 +150,7 @@ export const HeroCinematic: React.FC<HeroProps> = ({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="pt-1 flex items-center justify-center gap-2.5 text-[10px] font-mono tracking-widest text-slate-300/70 uppercase"
+            className="pt-1 flex items-center justify-center gap-2 sm:gap-2.5 text-[9px] sm:text-[10px] font-mono tracking-widest text-slate-300/70 uppercase flex-wrap"
           >
             <span>Web</span>
             <span className="text-slate-500">&bull;</span>
