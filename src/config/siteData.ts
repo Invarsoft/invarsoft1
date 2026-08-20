@@ -136,7 +136,7 @@ export const SOLUTIONS_DATA: SolutionItem[] = [
     category: 'Operational Efficiency',
     shortDesc: 'Workflow automation, AI-powered business processes, API integrations, and operational optimization.',
     fullDesc: 'Eliminate repetitive manual tasks and data silos by building automated API orchestration pipelines and intelligent monitoring systems.',
-    icon: 'Cpu',
+    icon: 'Server',
     features: ['Cross-System API Integration', 'Event-Driven Automation', 'Data Pipeline Orchestration', 'Error Handling & Auditing'],
     metrics: '-60% manual operational cost',
     accent: 'from-teal-600 to-emerald-600'
@@ -487,7 +487,7 @@ export const INDUSTRIES_DATA = [
   { name: 'Healthcare & Biotech', icon: 'Activity', desc: 'HIPAA-compliant telemetry, telemedicine, and EHR integrations.' },
   { name: 'Manufacturing & Industrial', icon: 'Factory', desc: 'IoT telemetry, supply chain tracking, and factory robotics interfaces.' },
   { name: 'E-Commerce & Retail', icon: 'ShoppingBag', desc: 'High-conversion headless shopping platforms and inventory sync.' },
-  { name: 'Technology & SaaS', icon: 'Cpu', desc: 'Developer tools, API infrastructure, and high-growth SaaS web apps.' },
+  { name: 'Technology & SaaS', icon: 'Server', desc: 'Developer tools, API infrastructure, and high-growth SaaS web apps.' },
   { name: 'Hospitality & Travel', icon: 'Compass', desc: 'Direct booking engines, guest portals, and concierge automation.' },
   { name: 'Education & EdTech', icon: 'GraduationCap', desc: 'Interactive learning management systems and virtual classrooms.' },
   { name: 'Professional Services', icon: 'Briefcase', desc: 'Client portals, document automation, and corporate web platforms.' }

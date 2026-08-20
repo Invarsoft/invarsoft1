@@ -42,7 +42,7 @@ export const servicesData: ServiceItem[] = [
     title: 'Deep Learning (DL)',
     category: 'AI Services',
     description: 'Custom neural network architecture design, PyTorch/TensorFlow model training, deep reinforcement learning, transfer learning, and model quantization.',
-    icon: Brain,
+    icon: Server,
     deliverables: ['Custom Deep Neural Network Architectures (PyTorch/TensorFlow)', 'Transfer Learning & Pre-Trained Model Fine-Tuning', 'Neural Network Quantization & Edge Optimization', 'Multi-Layer Perceptron (MLP) & CNN/RNN Pipelines', 'High-Throughput GPU Accelerated Inferencing']
   },
   {
@@ -58,7 +58,7 @@ export const servicesData: ServiceItem[] = [
     title: 'Machine Learning (ML)',
     category: 'AI Services',
     description: 'Supervised & unsupervised machine learning, predictive analytics, Scikit-learn algorithms, gradient boosted trees (XGBoost/CatBoost), and MLOps deployment.',
-    icon: Cpu,
+    icon: Activity,
     deliverables: ['Predictive Classification & Regression Analytics', 'Gradient Boosted Trees (XGBoost, LightGBM, CatBoost)', 'Customer Churn & Anomaly Detection Models', 'Scikit-Learn Machine Learning Pipelines', 'MLflow Experiment Tracking & Deployment']
   },
   {
@@ -74,7 +74,7 @@ export const servicesData: ServiceItem[] = [
     title: 'Generative AI & LLM Integration',
     category: 'AI Services',
     description: 'Enterprise integration of OpenAI (GPT-4o), Anthropic Claude, and Google Gemini APIs, custom RAG knowledge bases, and LlamaIndex vector retrieval.',
-    icon: Sparkles,
+    icon: Zap,
     deliverables: ['OpenAI GPT-4o, Claude & Gemini API Integrations', 'Retrieval-Augmented Generation (RAG) Knowledge Bases', 'LlamaIndex & LangChain Vector Retrieval', 'Private Local LLM Deployment (Ollama)', 'Stable Diffusion Image Generation Pipelines']
   },
   {
@@ -82,7 +82,7 @@ export const servicesData: ServiceItem[] = [
     title: 'AI Agents & Workflow Automation',
     category: 'AI Services',
     description: 'Autonomous multi-agent AI swarms (CrewAI/AutoGen), intelligent task delegation, and automated n8n/Make API integration triggers.',
-    icon: Bot,
+    icon: Terminal,
     deliverables: ['Autonomous Multi-Agent AI Swarms (CrewAI/AutoGen)', 'n8n & Make.com Automated Workflow Triggers', 'API Webhook Automation & Agent Orchestration', 'Intelligent Document & Invoice Data Processing', 'Custom AI Customer Support Chatbots']
   },
 
@@ -504,13 +504,13 @@ export const TechnologySection: React.FC = () => {
               </button>
               <button
                 onClick={() => setServiceFilter('AI Services')}
-                className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold font-mono transition-all ${
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 cursor-pointer ${
                   serviceFilter === 'AI Services'
-                    ? 'bg-cyan-400 text-black shadow-[0_0_20px_rgba(0,240,255,0.4)]'
-                    : 'bg-cyan-950/40 text-cyan-300 hover:bg-cyan-950/70 border border-cyan-500/30'
+                    ? 'bg-cyan-500 text-black shadow-[0_0_20px_rgba(0,240,255,0.4)]'
+                    : 'text-slate-400 hover:text-white hover:bg-white/5 border border-white/10'
                 }`}
               >
-                <Brain className="w-3.5 h-3.5" />
+                <Terminal className="w-3.5 h-3.5" />
                 <span>AI SERVICES ({servicesData.filter(s => s.category === 'AI Services').length})</span>
               </button>
               <button

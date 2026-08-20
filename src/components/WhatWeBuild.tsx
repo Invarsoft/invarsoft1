@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Globe, Code2, Layout, ShoppingCart, Cpu, RefreshCw, ArrowRight, X, CheckCircle2, Sparkles, Layers, Zap, Smartphone, MessageSquare } from 'lucide-react';
+import { Globe, Code2, Layout, ShoppingCart, RefreshCw, ArrowRight, X, CheckCircle2, Layers, Zap, Smartphone, MessageSquare, Terminal } from 'lucide-react';
 import Link from 'next/link';
 
 export interface ServiceItem {
@@ -160,7 +160,7 @@ export const servicesData: ServiceItem[] = [
     number: '07',
     title: 'AI & Automation',
     tagline: 'Intelligent systems that help businesses work faster and smarter.',
-    icon: Cpu,
+    icon: Terminal,
     description: 'Custom AI integrations, LLM knowledge base search (RAG), autonomous multi-agent swarms, and automated n8n workflow triggers.',
     includes: [
       'AI integrations',

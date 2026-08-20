@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { SOLUTIONS_DATA, SolutionItem } from '@/config/siteData';
-import { Bot, Code2, Globe, Layers, Cpu, ShieldCheck, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Terminal, Code2, Globe, Layers, Server, ShieldCheck, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 interface ServicesSectionProps {
   onSelectSolution?: (solution: SolutionItem) => void;
@@ -13,13 +13,13 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectSoluti
 
   const getIcon = (iconName: string) => {
     switch (iconName) {
-      case 'Bot': return <Bot className="w-6 h-6 text-blue-600" />;
+      case 'Bot': return <Terminal className="w-6 h-6 text-blue-600" />;
       case 'Code2': return <Code2 className="w-6 h-6 text-indigo-600" />;
       case 'Globe': return <Globe className="w-6 h-6 text-cyan-600" />;
       case 'Layers': return <Layers className="w-6 h-6 text-violet-600" />;
-      case 'Cpu': return <Cpu className="w-6 h-6 text-emerald-600" />;
+      case 'Cpu': return <Server className="w-6 h-6 text-emerald-600" />;
       case 'ShieldCheck': return <ShieldCheck className="w-6 h-6 text-blue-600" />;
-      default: return <Bot className="w-6 h-6 text-blue-600" />;
+      default: return <Terminal className="w-6 h-6 text-blue-600" />;
     }
   };
 

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Rocket, TrendingUp, Building2, Lightbulb, ArrowRight, Brain, ShoppingBag, Wrench, Palette, Cloud, Bot, ShieldCheck } from 'lucide-react';
+import { Rocket, TrendingUp, Building2, Lightbulb, ArrowRight, ShoppingBag, Wrench, Palette, Cloud, ShieldCheck, Terminal, Layers } from 'lucide-react';
 
 export const solutionsData = [
   {
@@ -16,7 +16,7 @@ export const solutionsData = [
     title: 'AI & Intelligent Automation Solutions',
     description: 'Deploy cutting-edge AI models, custom LLMs, and multi-agent swarms.',
     details: 'Enterprise LLM integrations (GPT-4o/Claude/Gemini), autonomous multi-agent AI swarms (CrewAI), RAG knowledge bases, and automated n8n/Make workflow triggers.',
-    icon: Brain,
+    icon: Terminal,
     highlights: ['Custom RAG Knowledge Bases', 'Autonomous Multi-Agent Swarms', 'n8n & Make Workflow Triggers', 'NLP & Computer Vision Pipelines']
   },
   {

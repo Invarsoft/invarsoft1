@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Palette, Cpu, Target, TrendingUp } from 'lucide-react';
+import { Palette, Server, Target, TrendingUp } from 'lucide-react';
 
 export const statsPillars = [
   {
@@ -13,7 +13,7 @@ export const statsPillars = [
   {
     title: 'Technology Driven',
     description: 'Powered by modern frameworks, clean code architecture and AI tools.',
-    icon: Cpu,
+    icon: Server,
   },
   {
     title: 'Business Focused',

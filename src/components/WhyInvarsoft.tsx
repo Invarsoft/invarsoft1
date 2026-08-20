@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Palette, Cpu, Target, DollarSign } from 'lucide-react';
+import { Palette, Server, Target, DollarSign } from 'lucide-react';
 
 export const featureBlocks = [
   {
@@ -16,7 +16,7 @@ export const featureBlocks = [
     number: '02',
     title: 'Modern Technology',
     description: 'We use modern frameworks and technologies to build scalable digital products.',
-    icon: Cpu,
+    icon: Server,
     accent: 'from-blue-400 to-indigo-500',
   },
   {

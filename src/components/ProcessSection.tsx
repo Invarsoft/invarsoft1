@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Search, Compass, Layers, Code, Cpu, ShieldCheck, Rocket, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Search, Compass, Layers, Code, ShieldCheck, Rocket, CheckCircle, ChevronLeft, ChevronRight, Terminal } from 'lucide-react';
 
 export const processSteps = [
   {
@@ -61,7 +61,7 @@ export const processSteps = [
     number: '05',
     tabTitle: 'AI & Automation',
     title: 'AI & Automation Integration',
-    icon: Cpu,
+    icon: Terminal,
     summary: 'Integrate custom LLM models, vector search RAG, and autonomous workflow swarms.',
     details: [
       'OpenAI (GPT-4o), Claude & Gemini API integration',

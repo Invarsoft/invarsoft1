@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Cpu, Layers, ShieldCheck, Zap, Code2, Globe } from 'lucide-react';
+import { Server, Layers, ShieldCheck, Zap, Code2, Globe } from 'lucide-react';
 
 export const AboutInvarsoft: React.FC = () => {
   return (
@@ -23,7 +23,7 @@ export const AboutInvarsoft: React.FC = () => {
               transition={{ duration: 0.6 }}
               className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/5 border border-cyan-500/30 text-cyan-400 text-xs font-mono tracking-wider uppercase"
             >
-              <Cpu className="w-3.5 h-3.5" />
+              <Server className="w-3.5 h-3.5" />
               <span>ABOUT INVARSOFT</span>
             </motion.div>
 

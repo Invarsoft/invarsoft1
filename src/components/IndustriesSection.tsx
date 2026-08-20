@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { INDUSTRIES_DATA } from '@/config/siteData';
-import { Building2, Landmark, Activity, Factory, ShoppingBag, Cpu, Compass, GraduationCap, Briefcase } from 'lucide-react';
+import { Building2, Landmark, Activity, Factory, ShoppingBag, Server, Compass, GraduationCap, Briefcase } from 'lucide-react';
 
 export const IndustriesSection: React.FC = () => {
   const getIcon = (iconName: string) => {
@@ -12,7 +12,8 @@ export const IndustriesSection: React.FC = () => {
       case 'Activity': return <Activity className="w-5 h-5 text-emerald-600" />;
       case 'Factory': return <Factory className="w-5 h-5 text-amber-600" />;
       case 'ShoppingBag': return <ShoppingBag className="w-5 h-5 text-violet-600" />;
-      case 'Cpu': return <Cpu className="w-5 h-5 text-cyan-600" />;
+      case 'Cpu': return <Server className="w-5 h-5 text-cyan-600" />;
+      case 'Server': return <Server className="w-5 h-5 text-cyan-600" />;
       case 'Compass': return <Compass className="w-5 h-5 text-teal-600" />;
       case 'GraduationCap': return <GraduationCap className="w-5 h-5 text-blue-600" />;
       case 'Briefcase': return <Briefcase className="w-5 h-5 text-slate-700" />;

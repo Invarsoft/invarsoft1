@@ -26,7 +26,7 @@ export const SITE_CONFIG = {
       title: "AI & INTELLIGENT SOLUTIONS",
       shortTitle: "AI SOLUTIONS",
       description: "Custom AI models, intelligent agents, LLM integrations, and automated workflows engineered for scale.",
-      iconName: "Bot"
+      iconName: "Terminal"
     },
     {
       id: "website-development",
@@ -47,7 +47,7 @@ export const SITE_CONFIG = {
       title: "WEB MANAGEMENT & CLOUD",
       shortTitle: "CLOUD & MANAGEMENT",
       description: "Reliable ongoing digital management, cloud deployment, system optimization, and 24/7 maintenance.",
-      iconName: "Cpu"
+      iconName: "Server"
     },
     {
       id: "performance-seo",

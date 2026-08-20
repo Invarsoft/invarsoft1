@@ -2,13 +2,13 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Cpu, Bot, Zap, Shield, GitBranch, Terminal } from 'lucide-react';
+import { Server, Zap, Shield, GitBranch, Terminal } from 'lucide-react';
 
 export const aiFeatures = [
   {
     title: 'Custom AI Agents',
     desc: 'Autonomous bots handling client workflows & inquiry resolution 24/7.',
-    icon: Bot,
+    icon: Terminal,
     codeSnippet: 'agent.deploy({ role: "SupportAssistant", model: "InvarAI-v2" })',
   },
   {
@@ -20,7 +20,7 @@ export const aiFeatures = [
   {
     title: 'Business Intelligence',
     desc: 'Real-time predictive analytics dashboards powered by LLMs.',
-    icon: Cpu,
+    icon: Server,
     codeSnippet: 'analytics.query({ metric: "ConversionRate", predict: "+30 days" })',
   },
 ];
@@ -46,7 +46,7 @@ export const AIFutureSection: React.FC = () => {
               transition={{ duration: 0.6 }}
               className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-950/40 border border-cyan-500/30 text-cyan-400 text-xs font-mono font-semibold tracking-widest uppercase"
             >
-              <Cpu className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
+              <Server className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
               <span>ARTIFICIAL INTELLIGENCE & AUTOMATION</span>
             </motion.div>
 
