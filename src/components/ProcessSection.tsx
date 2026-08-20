@@ -2,55 +2,91 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Search, Compass, Code, Rocket, CheckCircle } from 'lucide-react';
+import { Search, Compass, Layers, Code, Cpu, ShieldCheck, Rocket, CheckCircle } from 'lucide-react';
 
 export const processSteps = [
   {
     number: '01',
-    title: 'Discover',
+    title: 'Discover & Scope',
     icon: Search,
-    summary: 'Understand the business, users, objectives and technical requirements.',
+    summary: 'Understand the business goals, user personas, technical requirements, and project scope.',
     details: [
-      'Stakeholder alignment & goals mapping',
-      'User audience research & persona mapping',
-      'Technical architecture audit',
-      'Scope & timeline definition'
+      'Stakeholder alignment & objectives mapping',
+      'Target audience research & user persona definition',
+      'Technical feasibility & legacy system audit',
+      'Project roadmap, budget & timeline definition'
     ],
   },
   {
     number: '02',
-    title: 'Design',
+    title: 'Design & Prototype',
     icon: Compass,
-    summary: 'Create the product strategy, experience and visual direction.',
+    summary: 'Craft intuitive user journeys, wireframes, high-fidelity UI design, and interactive prototypes.',
     details: [
-      'User journey & wireframing',
-      'Design system creation',
-      'Interactive high-fidelity prototypes',
-      'UX feedback iterations'
+      'User journey mapping & low-fidelity wireframes',
+      'Design system creation & UI component tokens',
+      'High-fidelity Figma prototypes & micro-interactions',
+      'Client feedback review & UX design approvals'
     ],
   },
   {
     number: '03',
-    title: 'Build',
-    icon: Code,
-    summary: 'Engineer the product using modern, scalable technologies.',
+    title: 'System Architecture',
+    icon: Layers,
+    summary: 'Define database schemas, API protocols, microservices, and cloud architecture.',
     details: [
-      'Next.js & React clean frontend development',
-      'Scalable backend & API integrations',
-      'Database schema & state management',
-      'Core Web Vitals & performance optimization'
+      'Database schema design (PostgreSQL / NoSQL / Vector DB)',
+      'REST, GraphQL & tRPC API contract specification',
+      'Scalable microservices & event queue planning',
+      'Cloud security & enterprise compliance architecture'
     ],
   },
   {
     number: '04',
-    title: 'Launch',
-    icon: Rocket,
-    summary: 'Deploy, optimize and continuously improve.',
+    title: 'Full-Stack Development',
+    icon: Code,
+    summary: 'Engineer scalable, high-performance web applications and backend systems.',
     details: [
-      'CI/CD deployment pipeline setup',
-      'End-to-end QA & security testing',
-      'Analytics & performance monitoring',
-      'Post-launch support & continuous scaling'
+      'Next.js & React type-safe frontend development',
+      'Node.js, Express & FastAPI backend serving endpoints',
+      'State management, dynamic caching & data fetching',
+      'Sub-second page load & Core Web Vitals optimization'
+    ],
+  },
+  {
+    number: '05',
+    title: 'AI & Automation Integration',
+    icon: Cpu,
+    summary: 'Integrate custom LLM models, vector search RAG, and autonomous workflow swarms.',
+    details: [
+      'OpenAI (GPT-4o), Claude & Gemini API integration',
+      'Custom RAG knowledge bases & vector search indexing',
+      'Autonomous multi-agent AI swarms (CrewAI / LangGraph)',
+      'n8n & Make automated API workflow triggers'
+    ],
+  },
+  {
+    number: '06',
+    title: 'QA & Security Audit',
+    icon: ShieldCheck,
+    summary: 'Rigorous multi-layer testing, vulnerability auditing, and performance profiling.',
+    details: [
+      'Automated unit, integration & end-to-end testing',
+      'Cross-browser & mobile device compatibility QA',
+      'Penetration testing & SSL security compliance',
+      'High-throughput load testing & latency optimization'
+    ],
+  },
+  {
+    number: '07',
+    title: 'Deploy & Scale',
+    icon: Rocket,
+    summary: 'Automated CI/CD cloud deployment, 24/7 telemetry monitoring, and continuous scaling.',
+    details: [
+      'Vercel & AWS cloud infrastructure deployment',
+      'GitHub Actions automated CI/CD shipping pipelines',
+      'Real-time Sentry error tracking & analytics telemetry',
+      'Post-launch SLA support, maintenance & feature scaling'
     ],
   },
 ];
@@ -70,7 +106,7 @@ export const ProcessSection: React.FC = () => {
           1,
           Math.max(0, (windowHeight * 0.7 - rect.top) / (rect.height * 0.8))
         );
-        const step = Math.min(3, Math.floor(progress * 4));
+        const step = Math.min(6, Math.floor(progress * 7));
         setActiveStep(step);
       }
     };
@@ -99,7 +135,7 @@ export const ProcessSection: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/5 border border-cyan-500/30 text-cyan-400 text-xs font-mono font-semibold tracking-widest uppercase"
           >
-            THE METHODOLOGY
+            OUR 7-STEP METHODOLOGY
           </motion.div>
 
           <motion.h2
@@ -109,7 +145,7 @@ export const ProcessSection: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white"
           >
-            How We Build
+            7 Steps To Product Excellence
           </motion.h2>
 
           <motion.p
@@ -119,18 +155,18 @@ export const ProcessSection: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-slate-400 text-lg sm:text-xl font-normal max-w-2xl mx-auto leading-relaxed"
           >
-            A simple process for building ambitious digital products.
+            A battle-tested 7-stage engineering framework for building ambitious digital products.
           </motion.p>
         </div>
 
-        {/* INTERACTIVE STAGE SELECTOR TABS */}
-        <div className="flex justify-center mb-16 overflow-x-auto pb-4">
+        {/* INTERACTIVE STAGE SELECTOR TABS (TOUCH & SCROLL READY) */}
+        <div className="flex justify-center mb-16 overflow-x-auto pb-4 no-scrollbar">
           <div className="inline-flex items-center gap-2 bg-[#050A0F] p-2 rounded-2xl border border-white/10 backdrop-blur-xl">
             {processSteps.map((step, idx) => (
               <button
                 key={step.number}
                 onClick={() => setActiveStep(idx)}
-                className={`flex items-center gap-3 px-6 py-3 rounded-xl text-sm font-bold transition-all duration-300 ${
+                className={`flex items-center gap-2.5 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 whitespace-nowrap cursor-pointer ${
                   activeStep === idx
                     ? 'bg-cyan-500 text-black shadow-[0_0_20px_rgba(0,240,255,0.4)]'
                     : 'text-slate-400 hover:text-white hover:bg-white/5'
@@ -148,7 +184,7 @@ export const ProcessSection: React.FC = () => {
           <div className="h-1 bg-white/10 w-full rounded-full overflow-hidden">
             <motion.div
               className="h-full bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"
-              animate={{ width: `${((activeStep + 1) / 4) * 100}%` }}
+              animate={{ width: `${((activeStep + 1) / 7) * 100}%` }}
               transition={{ duration: 0.4 }}
             />
           </div>
@@ -172,12 +208,12 @@ export const ProcessSection: React.FC = () => {
                     {processSteps[activeStep].number}
                   </span>
                   <div className="h-8 w-px bg-white/10" />
-                  <h3 className="text-3xl font-extrabold text-white">
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
                     {processSteps[activeStep].title}
                   </h3>
                 </div>
 
-                <p className="text-slate-300 text-lg leading-relaxed font-normal">
+                <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-normal">
                   {processSteps[activeStep].summary}
                 </p>
 
@@ -186,7 +222,7 @@ export const ProcessSection: React.FC = () => {
                     STAGE DELIVERABLES & ACTIVITIES
                   </span>
                   {processSteps[activeStep].details.map((detail, idx) => (
-                    <div key={idx} className="flex items-center gap-3 text-sm text-slate-200">
+                    <div key={idx} className="flex items-center gap-3 text-xs sm:text-sm text-slate-200">
                       <CheckCircle className="w-4 h-4 text-cyan-400 flex-shrink-0" />
                       <span>{detail}</span>
                     </div>
