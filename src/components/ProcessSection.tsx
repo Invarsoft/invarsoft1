@@ -174,48 +174,52 @@ export const ProcessSection: React.FC = () => {
           </motion.p>
         </div>
 
-        {/* COMPACT & RESPONSIVE 7-STEP TAB BAR WITH TOUCH SCROLL */}
-        <div className="relative mb-12 max-w-5xl mx-auto">
-          {/* Scroll Left Button for Mobile/Tablet */}
+        {/* MOBILE STEP SWITCHER CONTROL (DISPLAYED ON PHONES) */}
+        <div className="md:hidden mb-8 max-w-md mx-auto p-4 rounded-2xl bg-[#050A0F] border border-cyan-500/30 flex items-center justify-between gap-3 shadow-lg">
           <button
-            onClick={() => scrollTabs('left')}
-            className="md:hidden absolute left-0 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-black/80 border border-white/10 text-cyan-400 shadow-lg"
-            aria-label="Scroll left"
+            onClick={() => setActiveStep((prev) => (prev > 0 ? prev - 1 : 6))}
+            className="flex items-center gap-1 px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-xs font-mono text-cyan-400 font-bold active:scale-95 transition-all"
           >
             <ChevronLeft className="w-4 h-4" />
+            <span>Prev</span>
           </button>
 
-          {/* Tab Strip Container */}
-          <div
-            ref={scrollTabRef}
-            className="overflow-x-auto scroll-smooth no-scrollbar py-2 px-8 md:px-0"
-          >
-            <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-[#050A0F] p-1.5 sm:p-2 rounded-2xl border border-white/10 backdrop-blur-xl min-w-max mx-auto">
-              {processSteps.map((step, idx) => (
-                <button
-                  key={step.number}
-                  onClick={() => setActiveStep(idx)}
-                  className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs font-bold transition-all duration-300 whitespace-nowrap cursor-pointer ${
-                    activeStep === idx
-                      ? 'bg-cyan-500 text-black shadow-[0_0_20px_rgba(0,240,255,0.4)]'
-                      : 'text-slate-400 hover:text-white hover:bg-white/5'
-                  }`}
-                >
-                  <span className="font-mono text-[11px] font-extrabold">{step.number}</span>
-                  <span className="text-xs">{step.tabTitle}</span>
-                </button>
-              ))}
-            </div>
+          <div className="text-center font-mono">
+            <span className="text-[11px] text-cyan-400 block uppercase tracking-wider font-semibold">
+              STEP {processSteps[activeStep].number} OF 07
+            </span>
+            <span className="text-xs text-white font-bold block truncate max-w-[150px]">
+              {processSteps[activeStep].tabTitle}
+            </span>
           </div>
 
-          {/* Scroll Right Button for Mobile/Tablet */}
           <button
-            onClick={() => scrollTabs('right')}
-            className="md:hidden absolute right-0 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-black/80 border border-white/10 text-cyan-400 shadow-lg"
-            aria-label="Scroll right"
+            onClick={() => setActiveStep((prev) => (prev < 6 ? prev + 1 : 0))}
+            className="flex items-center gap-1 px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-xs font-mono text-cyan-400 font-bold active:scale-95 transition-all"
           >
+            <span>Next</span>
             <ChevronRight className="w-4 h-4" />
           </button>
+        </div>
+
+        {/* DESKTOP & TABLET 7-STEP TAB STRIP */}
+        <div className="hidden md:flex justify-center mb-12 max-w-5xl mx-auto overflow-x-auto no-scrollbar">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-[#050A0F] p-2 rounded-2xl border border-white/10 backdrop-blur-xl">
+            {processSteps.map((step, idx) => (
+              <button
+                key={step.number}
+                onClick={() => setActiveStep(idx)}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 whitespace-nowrap cursor-pointer ${
+                  activeStep === idx
+                    ? 'bg-cyan-500 text-black shadow-[0_0_20px_rgba(0,240,255,0.4)]'
+                    : 'text-slate-400 hover:text-white hover:bg-white/5'
+                }`}
+              >
+                <span className="font-mono text-xs font-extrabold">{step.number}</span>
+                <span>{step.tabTitle}</span>
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* DYNAMIC PROGRESS BAR LINE */}

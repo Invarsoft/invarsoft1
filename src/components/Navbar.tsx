@@ -34,12 +34,23 @@ export const Navbar: React.FC<NavbarProps> = ({ onLogoClick }) => {
     { label: 'About', href: '/about' },
   ];
 
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'py-3.5 bg-[#050A0F]/85 backdrop-blur-xl border-b border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]'
-          : 'py-5 bg-transparent border-b border-white/5'
+          ? 'py-3 bg-[#050A0F]/95 backdrop-blur-xl border-b border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]'
+          : 'py-4 sm:py-5 bg-transparent border-b border-white/5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -98,10 +109,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onLogoClick }) => {
         {/* Mobile Hamburger Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2.5 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors"
+          className="lg:hidden p-2 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors cursor-pointer"
           aria-label="Toggle menu"
         >
-          {mobileMenuOpen ? <X className="w-6 h-6 text-cyan-400" /> : <Menu className="w-6 h-6 text-white" />}
+          {mobileMenuOpen ? <X className="w-5 h-5 text-cyan-400" /> : <Menu className="w-5 h-5 text-white" />}
         </button>
       </div>
 
@@ -109,13 +120,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onLogoClick }) => {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.25 }}
-            className="lg:hidden fixed inset-0 top-[70px] bg-[#050A0F]/95 backdrop-blur-2xl z-40 border-t border-white/10 px-6 py-8 flex flex-col justify-between overflow-y-auto"
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="lg:hidden fixed left-0 right-0 top-[60px] h-[calc(100dvh-60px)] bg-[#050A0F] z-[100] border-t border-white/10 px-6 py-6 flex flex-col justify-between overflow-y-auto"
           >
-            <div className="space-y-2 pt-2">
+            <div className="space-y-1.5 pt-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}

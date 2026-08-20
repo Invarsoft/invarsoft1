@@ -169,7 +169,7 @@ export const HeroCinematic: React.FC<HeroProps> = ({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.7 }}
         onClick={() => scrollToSection('trust-strip')}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 cursor-pointer text-slate-300 hover:text-white transition-colors group"
+        className="absolute bottom-10 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1.5 cursor-pointer text-slate-300 hover:text-white transition-colors group"
       >
         <span className="text-[10px] font-mono tracking-widest uppercase text-slate-300/80 group-hover:text-white">
           SCROLL TO EXPLORE &darr;
