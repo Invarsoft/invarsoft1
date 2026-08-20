@@ -23,47 +23,49 @@ export const projectsData: ProjectItem[] = [
     id: 'cbhanu',
     title: "C Bhanu's Interiors",
     category: 'Web Design / Development / Digital Experience',
-    subtitle: 'High-End Luxury Interior Design Studio Website',
-    description: "A bespoke, immersive digital experience designed for C Bhanu's Interiors. Featuring smooth parallax transitions, editorial layout architecture, high-resolution visual storytelling, and high-converting client inquiry workflows.",
-    tags: ['Web Design', 'Development', 'Interactive 3D', 'Next.js'],
+    subtitle: 'High-End Luxury Interior Design Studio Platform',
+    description: "A bespoke, editorial digital experience engineered for C Bhanu's Interiors (cbhanusinteriors.in). Featuring smooth visual storytelling, high-resolution interior portfolio galleries, instant client consultation workflows, and mobile performance optimization.",
+    tags: ['Web Design', 'Development', 'Editorial Layout', 'Next.js'],
     image: '/media_1787164393235.jpg',
-    liveUrl: 'https://cbhanuinteriors.com',
+    liveUrl: 'https://cbhanusinteriors.in',
     featured: true,
     deliverables: [
-      'Custom Editorial Layout System',
-      'Sub-500ms Page Load Speeds',
+      'Custom Editorial Design System',
+      'Sub-500ms Core Web Vitals Speed',
       'Mobile-Optimized Touch Galleries',
-      'Interactive Project Showcase',
-      'Integrated WhatsApp & Direct Inquiry'
+      'Interactive Portfolio Showcase',
+      'Integrated WhatsApp & Direct Consultation'
     ],
     servicesProvided: [
-      'Bespoke Editorial Web Design',
-      'Interactive 3D Showroom Gallery',
+      'Bespoke Luxury Editorial Web Design',
+      'Interactive Interior Portfolio Showcase',
       'WhatsApp Instant Client Lead Booking',
       'Next.js 14 Speed Optimization',
-      'Sanity CMS Content Management'
+      'Sanity / Headless CMS Content Control'
     ]
   },
   {
-    id: 'ecommerce',
-    title: 'E-Commerce Experience',
-    category: 'E-Commerce Development',
-    subtitle: 'Premium Online Shopping Experience',
-    description: 'High-performance digital storefront engineered for high conversion rates, instant filter states, seamless checkout integration, and custom headless commerce architecture.',
-    tags: ['Shopify Custom', 'Next.js Commerce', 'UI/UX', 'Stripe'],
+    id: 'invarthings',
+    title: 'InvarThings',
+    category: 'IoT / Smart Tech / E-Commerce Platform',
+    subtitle: 'Next-Generation Smart Hardware & Technology Platform',
+    description: 'A cutting-edge technology and smart solutions platform built for InvarThings (invarthings.com). Designed for seamless product exploration, high-throughput e-commerce transactions, automated inventory management, and intuitive user experiences.',
+    tags: ['E-Commerce', 'Smart Tech', 'Next.js', 'Stripe API'],
     image: '/media_1787164387436.jpg',
-    liveUrl: 'https://invarsoft1-dnsa.vercel.app/websites',
+    liveUrl: 'https://invarthings.com',
     deliverables: [
-      'Custom Product Configurator',
-      'Sub-Second Checkout Flow',
-      'Inventory API Synchronization',
-      'SEO & Speed Optimization'
+      'High-Speed E-Commerce Architecture',
+      'Sub-Second Checkout Flow Integration',
+      'Real-Time Product API & Inventory Sync',
+      'Mobile-First Shopping Experience',
+      'Global Payment Gateway Setup'
     ],
     servicesProvided: [
-      'Headless Shopify Storefront',
-      'Sub-Second Checkout Flow Integration',
-      'Stripe & Global Payment Rails',
-      'Automated Inventory Synchronization'
+      'Custom E-Commerce Platform Architecture',
+      'Headless Product Configurator',
+      'Stripe & Global Payment Gateway Setup',
+      'Automated Inventory Synchronization',
+      'High-Speed Cloud Hosting & CDN'
     ]
   },
   {
