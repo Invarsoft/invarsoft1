@@ -385,26 +385,13 @@ export const WhatWeBuild: React.FC = () => {
                 </div>
               </div>
 
-              {/* Recommended Tech Stack & Timeline */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-white/10">
+              {/* Delivery Timeline */}
+              <div className="pt-4 border-t border-white/10 flex items-center justify-between">
                 <div>
-                  <span className="text-xs font-mono text-slate-400 uppercase tracking-wider block mb-2 font-semibold">
-                    RECOMMENDED TECH STACK
-                  </span>
-                  <div className="flex flex-wrap gap-2">
-                    {selectedService.techStack.map((tech, i) => (
-                      <span key={i} className="px-3 py-1 rounded-lg bg-cyan-950/60 border border-cyan-500/30 text-xs font-mono text-cyan-300">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <span className="text-xs font-mono text-slate-400 uppercase tracking-wider block mb-2 font-semibold">
+                  <span className="text-xs font-mono text-slate-400 uppercase tracking-wider block mb-1.5 font-semibold">
                     TYPICAL DELIVERY TIMELINE
                   </span>
-                  <span className="inline-block px-4 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-mono font-bold text-cyan-400">
+                  <span className="inline-block px-4 py-2 rounded-xl bg-cyan-950/40 border border-cyan-500/30 text-xs font-mono font-bold text-cyan-400">
                     ⏱️ {selectedService.timeline}
                   </span>
                 </div>

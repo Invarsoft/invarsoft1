@@ -17,7 +17,7 @@ export const InvarsoftLogo: React.FC<InvarsoftLogoProps> = ({
 }) => {
   const heights = {
     sm: 'h-7 sm:h-8',
-    md: 'h-8 sm:h-9',
+    md: 'h-8 sm:h-9.5',
     lg: 'h-10 sm:h-11',
     xl: 'h-12 sm:h-14',
   };
@@ -28,12 +28,12 @@ export const InvarsoftLogo: React.FC<InvarsoftLogoProps> = ({
       className={`group inline-flex items-center cursor-pointer select-none ${className}`}
       aria-label="INVARSOFT Home"
     >
-      {/* Sleek Dark Glass Backdrop Pill Container matching Navbar buttons with Neon Highlight */}
-      <div className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md shadow-[0_0_20px_rgba(0,240,255,0.2)] hover:border-cyan-400/50 hover:shadow-[0_0_25px_rgba(0,240,255,0.4)] flex items-center justify-center transition-all duration-300 group-hover:scale-105">
+      {/* High-Visibility Crisp White Badge Container with Cyan Glow Halo */}
+      <div className="px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-xl bg-white shadow-[0_0_20px_rgba(0,240,255,0.45)] border border-white flex items-center justify-center transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_0_30px_rgba(0,240,255,0.7)]">
         <img
-          src="/official-logo-transparent.png"
+          src="/official-logo-badge.png"
           alt="InvarSoft Logo"
-          className={`${heights[size]} w-auto object-contain filter drop-shadow-[0_0_8px_rgba(0,240,255,0.4)] brightness-110 contrast-110`}
+          className={`${heights[size]} w-auto object-contain brightness-105 contrast-105`}
         />
       </div>
     </div>

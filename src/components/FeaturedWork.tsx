@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, ExternalLink, X, CheckCircle2, Layers, Globe, Zap } from 'lucide-react';
+import { ArrowRight, ExternalLink, X, CheckCircle2, Layers, Globe, Zap, ShieldCheck, HeartHandshake, FileText, Sparkles } from 'lucide-react';
 
 export interface ProjectItem {
   id: string;
@@ -16,6 +16,10 @@ export interface ProjectItem {
   featured?: boolean;
   deliverables: string[];
   servicesProvided: string[];
+  planningStrategy: string;
+  suggestedChanges: string[];
+  clientTrustNote: string;
+  technicalGuidance: string[];
 }
 
 export const projectsData: ProjectItem[] = [
@@ -42,6 +46,20 @@ export const projectsData: ProjectItem[] = [
       'WhatsApp Instant Client Lead Booking',
       'Next.js 14 Speed Optimization',
       'Sanity / Headless CMS Content Control'
+    ],
+    planningStrategy: "We initiated the project with an in-depth Discovery & Brand Architecture audit. We analyzed user navigation paths for high-end luxury interior clients, mapping out intuitive project gallery filters, editorial typography hierarchies, and dynamic booking flows.",
+    suggestedChanges: [
+      "Replaced slow legacy image carousels with sub-500ms progressive WebP image loading.",
+      "Introduced high-converting editorial project storyboards that showcase interior craftsmanship.",
+      "Integrated 1-click WhatsApp instant booking triggers directly into mobile hero screens.",
+      "Implemented a headless CMS structure allowing effortless client portfolio updates without developer intervention."
+    ],
+    clientTrustNote: "The client placed absolute trust in InvarSoft's technical authority and design direction. When we presented our complete architectural wireframes and high-fidelity prototype, the client was blown away by the sleek aesthetic and finalized our design on the very first review with zero revisions required.",
+    technicalGuidance: [
+      "Engineered using Next.js 14 App Router for lightning-fast server-side rendering (SSR).",
+      "Deployed on Vercel Edge Network with Cloudflare CDN for zero-latency image delivery.",
+      "Integrated Sanity Headless CMS for structured content governance.",
+      "Configured GA4 conversion telemetry to track high-value client inquiry submissions."
     ]
   },
   {
@@ -66,11 +84,23 @@ export const projectsData: ProjectItem[] = [
       'Stripe & Global Payment Gateway Setup',
       'Automated Inventory Synchronization',
       'High-Speed Cloud Hosting & CDN'
+    ],
+    planningStrategy: "We designed the end-to-end e-commerce architecture for InvarThings from scratch, planning high-throughput product catalog indexing, real-time inventory management, and intuitive category navigation.",
+    suggestedChanges: [
+      "Architected a headless e-commerce storefront for instant sub-second page transitions.",
+      "Integrated 1-click multi-currency checkout rails via Stripe API.",
+      "Implemented automated inventory synchronization & order dispatch webhooks."
+    ],
+    clientTrustNote: "The client relied fully on InvarSoft's technical advisory. We guided them on database choices, API protocols, and UI design patterns. The client embraced our recommendations with complete trust and approved our design vision instantly.",
+    technicalGuidance: [
+      "Built with Next.js Commerce, React, and Tailwind CSS for rapid sub-second rendering.",
+      "Integrated Stripe & global payment gateways with automated webhooks.",
+      "Configured Redis caching for real-time stock availability and high-concurrency cart states."
     ]
   },
   {
     id: 'business-site',
-    title: 'Business Website',
+    title: 'Corporate Business Platform',
     category: 'Corporate Digital Presence',
     subtitle: 'Modern Corporate Technology Web Platform',
     description: 'Sophisticated corporate platform built to project enterprise authority, engage decision makers, and articulate complex service offerings with clarity.',
@@ -88,11 +118,21 @@ export const projectsData: ProjectItem[] = [
       'Multi-Section Product Architecture',
       'Lead Attribution & GA4 Analytics',
       'Enterprise Cloud Hosting & SSL'
+    ],
+    planningStrategy: "Mapped corporate stakeholder requirements, defining modular content blocks to showcase services, enterprise case studies, and compliance certifications.",
+    suggestedChanges: [
+      "Replaced dense text blocks with interactive card layouts and visual hierarchy.",
+      "Added conversion-focused CTA triggers throughout service pages."
+    ],
+    clientTrustNote: "The client trusted our digital positioning strategy and approved the site design and structure on initial presentation.",
+    technicalGuidance: [
+      "Built with Next.js, React, and Tailwind CSS.",
+      "Optimized Core Web Vitals and security headers."
     ]
   },
   {
     id: 'custom-software',
-    title: 'Custom Software',
+    title: 'Enterprise Client Portal',
     category: 'Custom Software Development',
     subtitle: 'Business-Focused Web Application & Portal',
     description: 'Tailored enterprise portal empowering teams with streamlined task automation, real-time analytics dashboards, and role-based permissions.',
@@ -110,11 +150,21 @@ export const projectsData: ProjectItem[] = [
       'Real-Time Operational Analytics Dashboard',
       'PostgreSQL & Redis Backend Architecture',
       'Automated Enterprise Operations Workflows'
+    ],
+    planningStrategy: "Conducted technical workflow mapping to automate client document sharing, role-based security, and real-time status reporting.",
+    suggestedChanges: [
+      "Migrated manual email approvals to automated workspace status triggers.",
+      "Created unified real-time analytics dashboard for operational clarity."
+    ],
+    clientTrustNote: "The executive team placed complete confidence in our security model and backend design, approving the system architecture immediately.",
+    technicalGuidance: [
+      "Node.js & Express backend microservices with PostgreSQL.",
+      "JWT role-based authentication and SSL data encryption."
     ]
   },
   {
     id: 'ai-solution',
-    title: 'AI Solution',
+    title: 'AI Workflow Assistant',
     category: 'AI & Business Automation',
     subtitle: 'Intelligent Digital Workflow & Assistant',
     description: 'Custom AI integration automating customer support inquiries, document parsing, and operational data retrieval for high efficiency.',
@@ -132,6 +182,16 @@ export const projectsData: ProjectItem[] = [
       'Document Data Extraction Engine',
       'OpenAI & Claude API Integration',
       'HubSpot & Salesforce CRM Lead Sync'
+    ],
+    planningStrategy: "Designed vector search indexing and prompt engineering pipelines to automate repetitive customer service inquiries.",
+    suggestedChanges: [
+      "Implemented Retrieval-Augmented Generation (RAG) to ensure 100% accurate, non-hallucinating responses.",
+      "Synced AI bot interactions directly into CRM lead tables."
+    ],
+    clientTrustNote: "The client entrusted us with their core customer inquiry flow. Our prompt pipeline exceeded expectation and was finalized instantly.",
+    technicalGuidance: [
+      "Python FastAPI serving vector search over Pinecone database.",
+      "OpenAI GPT-4o API integration with fallback model routing."
     ]
   },
 ];
@@ -159,7 +219,7 @@ export const FeaturedWork: React.FC = () => {
               transition={{ duration: 0.6 }}
               className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/5 border border-cyan-500/30 text-cyan-400 text-xs font-mono font-semibold tracking-widest uppercase"
             >
-              PORTFOLIO SHOWCASE
+              PORTFOLIO &amp; CLIENT CASE STUDIES
             </motion.div>
 
             <motion.h2
@@ -169,7 +229,7 @@ export const FeaturedWork: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white"
             >
-              Selected Work
+              Our Portfolio
             </motion.h2>
 
             <motion.p
@@ -179,7 +239,7 @@ export const FeaturedWork: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-slate-400 text-base sm:text-lg font-normal"
             >
-              Click any project to view live website links and what we built for them.
+              Click any project to read the full technical development report and open the live website in a fresh tab.
             </motion.p>
           </div>
         </div>
@@ -211,7 +271,7 @@ export const FeaturedWork: React.FC = () => {
                 <div>
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono font-semibold mb-4">
                     <Layers className="w-3.5 h-3.5" />
-                    <span>FLAGSHIP CASE STUDY</span>
+                    <span>FEATURED CLIENT CASE STUDY</span>
                   </div>
 
                   <span className="block text-xs font-mono text-slate-400 tracking-wider uppercase mb-2">
@@ -244,10 +304,10 @@ export const FeaturedWork: React.FC = () => {
                       e.stopPropagation();
                       setSelectedProject(featuredProject);
                     }}
-                    className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-cyan-500 text-black font-bold text-xs shadow-[0_0_25px_rgba(0,240,255,0.3)] hover:bg-cyan-400 transition-all duration-300"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-cyan-500 text-black font-bold text-xs shadow-[0_0_25px_rgba(0,240,255,0.3)] hover:bg-cyan-400 transition-all duration-300 cursor-pointer"
                   >
-                    <span>View Project Details</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <FileText className="w-4 h-4" />
+                    <span>Read Full Development Report</span>
                   </button>
 
                   <a
@@ -308,7 +368,7 @@ export const FeaturedWork: React.FC = () => {
                 </div>
 
                 <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-cyan-400 transition-colors">
-                  <span>VIEW DETAILS &amp; LIVE LINK</span>
+                  <span>READ FULL REPORT &amp; OPEN LIVE SITE</span>
                   <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
@@ -318,14 +378,14 @@ export const FeaturedWork: React.FC = () => {
 
       </div>
 
-      {/* DETAILED PROJECT MODAL */}
+      {/* COMPREHENSIVE TECHNICAL DEVELOPMENT REPORT MODAL */}
       <AnimatePresence>
         {selectedProject && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md overflow-y-auto"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md overflow-y-auto"
             onClick={() => setSelectedProject(null)}
           >
             <motion.div
@@ -333,7 +393,7 @@ export const FeaturedWork: React.FC = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl bg-[#08131C] border border-cyan-500/30 p-6 sm:p-10 shadow-2xl text-white my-8 space-y-8"
+              className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl bg-[#08131C] border border-cyan-500/40 p-6 sm:p-10 shadow-2xl text-white my-8 space-y-8"
             >
               {/* Close Button */}
               <button
@@ -345,10 +405,12 @@ export const FeaturedWork: React.FC = () => {
 
               <div className="space-y-6">
                 <div>
-                  <span className="text-xs font-mono text-cyan-400 tracking-wider uppercase font-semibold block mb-2">
-                    {selectedProject.category}
-                  </span>
-                  <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-3">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-400 text-xs font-mono font-semibold mb-3">
+                    <FileText className="w-3.5 h-3.5" />
+                    <span>FULL TECHNICAL DEVELOPMENT REPORT</span>
+                  </div>
+
+                  <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-2">
                     {selectedProject.title}
                   </h2>
                   <p className="text-slate-300 text-base sm:text-lg font-normal">
@@ -356,42 +418,86 @@ export const FeaturedWork: React.FC = () => {
                   </p>
                 </div>
 
-                {/* Screenshot Image Preview */}
+                {/* Screenshot Image Preview with Live URL Overlay */}
                 <div className="rounded-2xl overflow-hidden max-h-96 bg-slate-900 border border-white/10 relative group">
                   <img
                     src={selectedProject.image}
                     alt={selectedProject.title}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end p-6">
                     <a
                       href={selectedProject.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-400 text-black font-bold text-xs shadow-lg hover:bg-cyan-300 transition-colors"
+                      className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-cyan-400 text-black font-bold text-xs shadow-[0_0_25px_rgba(0,240,255,0.4)] hover:bg-cyan-300 transition-all"
                     >
                       <Globe className="w-4 h-4" />
-                      <span>Open Live Website: {selectedProject.liveUrl}</span>
-                      <ExternalLink className="w-3.5 h-3.5" />
+                      <span>Visit Live Website: {selectedProject.liveUrl}</span>
+                      <ExternalLink className="w-4 h-4" />
                     </a>
                   </div>
                 </div>
 
-                <div className="space-y-3">
-                  <h4 className="text-lg font-bold text-white flex items-center gap-2">
-                    <Layers className="w-5 h-5 text-cyan-400" />
-                    <span>Project Overview</span>
+                {/* 1. HOW WE PLANNED THE PROJECT */}
+                <div className="space-y-3 p-6 rounded-2xl bg-white/5 border border-white/10">
+                  <h4 className="text-sm font-mono font-bold text-cyan-400 uppercase tracking-wider flex items-center gap-2">
+                    <Zap className="w-4 h-4 text-cyan-400" />
+                    <span>1. Project Planning &amp; Architectural Discovery</span>
                   </h4>
-                  <p className="text-slate-300 text-sm leading-relaxed">
-                    {selectedProject.description}
+                  <p className="text-slate-200 text-sm leading-relaxed">
+                    {selectedProject.planningStrategy}
                   </p>
                 </div>
 
-                {/* WHAT WE PROVIDED THEM SECTION */}
+                {/* 2. STRATEGIC DESIGN CHANGES WE SUGGESTED */}
+                <div className="space-y-3 p-6 rounded-2xl bg-white/5 border border-white/10">
+                  <h4 className="text-sm font-mono font-bold text-cyan-400 uppercase tracking-wider flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-cyan-400" />
+                    <span>2. Strategic Design &amp; UX Changes We Suggested</span>
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                    {selectedProject.suggestedChanges.map((change, i) => (
+                      <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-black/40 border border-white/10">
+                        <CheckCircle2 className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
+                        <span className="text-xs text-slate-200 font-medium">{change}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* 3. CLIENT TRUST & FIRST-REVIEW FINALIZATION */}
+                <div className="space-y-3 p-6 rounded-2xl bg-gradient-to-r from-cyan-950/40 via-blue-950/20 to-transparent border border-cyan-500/30">
+                  <h4 className="text-sm font-mono font-bold text-cyan-300 uppercase tracking-wider flex items-center gap-2">
+                    <HeartHandshake className="w-5 h-5 text-cyan-400" />
+                    <span>3. Client Trust &amp; First-Review Design Finalization</span>
+                  </h4>
+                  <p className="text-slate-200 text-sm leading-relaxed italic">
+                    "{selectedProject.clientTrustNote}"
+                  </p>
+                </div>
+
+                {/* 4. TECHNICAL GUIDANCE PROVIDED */}
+                <div className="space-y-3 p-6 rounded-2xl bg-white/5 border border-white/10">
+                  <h4 className="text-sm font-mono font-bold text-cyan-400 uppercase tracking-wider flex items-center gap-2">
+                    <ShieldCheck className="w-4 h-4 text-cyan-400" />
+                    <span>4. Technical Guidance &amp; Engineering Execution</span>
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                    {selectedProject.technicalGuidance.map((guide, i) => (
+                      <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-black/40 border border-white/10">
+                        <span className="w-2 h-2 rounded-full bg-cyan-400 mt-1.5 flex-shrink-0" />
+                        <span className="text-xs text-slate-200 font-normal">{guide}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* 5. WHAT WE PROVIDED THEM SUMMARY */}
                 <div className="space-y-4 p-6 rounded-2xl bg-white/5 border border-white/10">
                   <h4 className="text-sm font-mono font-bold text-cyan-400 uppercase tracking-wider flex items-center gap-2">
-                    <Zap className="w-4 h-4 text-cyan-400" />
-                    <span>What We Provided Them</span>
+                    <Layers className="w-4 h-4 text-cyan-400" />
+                    <span>5. Deliverables &amp; Services Provided</span>
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {selectedProject.servicesProvided.map((serviceItem, i) => (
@@ -403,38 +509,22 @@ export const FeaturedWork: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Technical Deliverables */}
-                <div className="space-y-4">
-                  <h4 className="text-sm font-mono font-bold text-slate-300 uppercase tracking-wider">
-                    Engineering &amp; Technical Deliverables
-                  </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {selectedProject.deliverables.map((item, i) => (
-                      <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
-                        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-1.5" />
-                        <span className="text-xs text-slate-300 font-normal">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Tags */}
-                <div className="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
-                  <div className="flex flex-wrap gap-2">
-                    {selectedProject.tags.map((tag, i) => (
-                      <span key={i} className="px-3 py-1 rounded-full bg-cyan-950/40 border border-cyan-500/30 text-xs font-mono text-cyan-300">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                {/* Modal Footer Actions */}
+                <div className="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <button
+                    onClick={() => setSelectedProject(null)}
+                    className="w-full sm:w-auto px-6 py-3 rounded-xl bg-white/5 border border-white/10 text-slate-300 font-bold text-xs hover:bg-white/10 transition-colors"
+                  >
+                    Close Report
+                  </button>
 
                   <a
                     href={selectedProject.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-cyan-400 hover:bg-cyan-300 text-black font-bold text-xs shadow-[0_0_25px_rgba(0,240,255,0.3)] transition-all"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-cyan-400 hover:bg-cyan-300 text-black font-bold text-xs shadow-[0_0_25px_rgba(0,240,255,0.4)] transition-all"
                   >
-                    <span>Visit Live Website</span>
+                    <span>Open Live Website ({selectedProject.liveUrl})</span>
                     <ExternalLink className="w-4 h-4" />
                   </a>
                 </div>
