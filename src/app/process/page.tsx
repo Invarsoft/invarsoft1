@@ -12,21 +12,21 @@ export default function ProcessPage() {
       <Navbar />
       
       {/* Page Header */}
-      <div className="bg-[#08131C] border-b border-white/10 py-20">
+      <div className="bg-[#08131C] border-b border-white/10 py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <span className="text-xs font-mono font-semibold text-cyan-400 bg-cyan-950/40 px-3.5 py-1 rounded-full border border-cyan-500/30">
-            THE METHODOLOGY
+            OUR 7-STEP METHODOLOGY
           </span>
           <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight">
-            How We Build
+            How We Build: 7 Steps To Excellence
           </h1>
-          <p className="text-slate-300 text-lg max-w-2xl mx-auto font-light">
-            A simple, transparent 4-stage process for engineering ambitious digital products with high quality and predictable velocity.
+          <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto font-light leading-relaxed">
+            A battle-tested 7-stage engineering framework for building ambitious digital products with high quality and predictable velocity.
           </p>
         </div>
       </div>
 
-      <ProcessSection />
+      <ProcessSection hideHeader={true} />
       <FinalCTASection />
       <Footer />
     </main>

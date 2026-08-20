@@ -98,7 +98,11 @@ export const processSteps = [
   },
 ];
 
-export const ProcessSection: React.FC = () => {
+interface ProcessSectionProps {
+  hideHeader?: boolean;
+}
+
+export const ProcessSection: React.FC<ProcessSectionProps> = ({ hideHeader = false }) => {
   const [activeStep, setActiveStep] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollTabRef = useRef<HTMLDivElement>(null);
@@ -134,7 +138,7 @@ export const ProcessSection: React.FC = () => {
     <section
       id="process"
       ref={containerRef}
-      className="relative py-20 sm:py-28 bg-[#08131C] text-white overflow-hidden"
+      className="relative py-16 sm:py-24 bg-[#08131C] text-white overflow-hidden"
     >
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-500/10 rounded-full blur-[180px] pointer-events-none" />
@@ -142,37 +146,39 @@ export const ProcessSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-3 sm:space-y-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 rounded-full bg-white/5 border border-cyan-500/30 text-cyan-400 text-[10px] sm:text-xs font-mono font-semibold tracking-widest uppercase"
-          >
-            OUR 7-STEP METHODOLOGY
-          </motion.div>
+        {!hideHeader && (
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-3 sm:space-y-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 rounded-full bg-white/5 border border-cyan-500/30 text-cyan-400 text-[10px] sm:text-xs font-mono font-semibold tracking-widest uppercase"
+            >
+              OUR 7-STEP METHODOLOGY
+            </motion.div>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white"
-          >
-            7 Steps To Product Excellence
-          </motion.h2>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white"
+            >
+              7 Steps To Product Excellence
+            </motion.h2>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-slate-400 text-sm sm:text-lg lg:text-xl font-normal max-w-2xl mx-auto leading-relaxed"
-          >
-            A battle-tested 7-stage engineering framework for building ambitious digital products.
-          </motion.p>
-        </div>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-slate-400 text-sm sm:text-lg lg:text-xl font-normal max-w-2xl mx-auto leading-relaxed"
+            >
+              A battle-tested 7-stage engineering framework for building ambitious digital products.
+            </motion.p>
+          </div>
+        )}
 
         {/* MOBILE STEP SWITCHER CONTROL (DISPLAYED ON PHONES) */}
         <div className="md:hidden mb-8 max-w-md mx-auto p-4 rounded-2xl bg-[#050A0F] border border-cyan-500/30 flex items-center justify-between gap-3 shadow-lg">
